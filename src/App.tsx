@@ -9,7 +9,9 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      saveClickCount(count);
+      if(count !== 0) {
+        saveClickCount(count);
+      }
       setCount(0);
     }, 1000);
     return () => clearTimeout(timer);
@@ -20,7 +22,7 @@ function App() {
       {error && <div>{error}</div>}
 
       <button disabled={loading} onClick={() => setCount((prev) => prev + 1)} className={"button"}>
-        {"Кликнуть"}
+        {loading ? "Загрузка" : "Кликнуть"}
       </button>
 
       <ClickCounterDisplayer

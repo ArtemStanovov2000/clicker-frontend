@@ -7,7 +7,7 @@ export const useSaveClickCount = () => {
 
   const saveClickCount = (count: number) => {
     setLoading(true);
-    fetch("https://www.google.com/", {
+    fetch("http://localhost:8000/", {
       method: "POST",
       body: JSON.stringify({ count }),
     })

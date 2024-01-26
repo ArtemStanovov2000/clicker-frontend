@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 
-interface Counter {
+interface Props {
     label: string;
     count: number;
     className: string;
@@ -14,7 +14,7 @@ interface Counter {
  * @param className имя класса элемента.
  */
 
-const ClickCounterDisplayer: FC<Counter> = ({ label, count, className }) => {
+const ClickCounterDisplayer: FC<Props> = ({ label, count, className }) => {
     return (
         <div className={className}>{`${label} ${count} раз`}</div>
     )
